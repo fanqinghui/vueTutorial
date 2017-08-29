@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>vue-helloworld</title>
@@ -11,6 +11,13 @@
 
 <div id="app">
     <p>{{ message }}</p>
+    <input type="text" v-model="message">
+</div>
+
+<div id="app-2">
+    <span v-bind:title="message">
+     鼠标绑定悬停此处查询信息
+    </span>
 </div>
 
 </body>
@@ -20,6 +27,13 @@
         el: '#app',
         data: {
             message: 'Hello Vue!'
+        }
+    })
+
+    var vu2=new Vue({
+        el:'#app-2',
+        data:{
+            message:'页面加载于'+new Date().toLocaleDateString()
         }
     })
 </script>
