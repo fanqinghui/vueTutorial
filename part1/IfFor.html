@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-helloworld</title>
+    <script src="https://unpkg.com/vue"></script>
+
+
+</head>
+<body>
+
+<div id="app">
+    <p v-if="name!=fqh1">name:{{name}}</p>
+    <p v-if="age>30">age:{{age}}</p>
+    <p v-if="sex!=middle">sex:{{sex}}</p>
+<hr/>
+    <p v-show="name!=fqh1">name:{{name}}</p>
+    <p v-show="age>30">age:{{age}}</p>
+    <p v-show="sex!=middle">sex:{{sex}}</p>
+
+</div>
+-------------for--------------------------
+<div id="app-2">
+    <table>
+       <thead><th>name</th><th>age</th><th>sex</th></thead>
+       <tr v-for="perple in person">
+           <td>{{perple.name}}</td>
+           <td>{{perple.age}}</td>
+           <td>{{perple.sex}}</td>
+       </tr>
+
+   </table>
+</div>
+
+</body>
+
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            name:'fqh',
+            age:30,
+            sex:'man'
+        }
+    })
+
+    var vu2=new Vue({
+        el:'#app-2',
+        data:{
+           person:[
+               {
+                   name:'fqh10',
+                   age:10,
+                   sex:'man'
+               },
+               {
+                   name:'fqh20',
+                   age:20,
+                   sex:'man'
+               },
+               {
+                   name:'fqh30',
+                   age:30,
+                   sex:'man'
+               }]
+        }
+    })
+</script>
+</html>
