@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-练习</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    {{title}}<br/>
+    </sapan>
+    <table>
+        <thead>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        </thead>
+        <template v-if="sex=='男'">
+            <tr v-for="record in manData">
+                <td>{{record.name}}</td>
+                <td>{{record.sex}}</td>
+                <td>{{record.age}}</td>
+            </tr>
+        </template>
+        <template v-else="sex=='女'">
+            <tr v-for="record in womanData">
+                <td>{{record.name}}</td>
+                <td>{{record.sex}}</td>
+                <td>{{record.age}}</td>
+            </tr>
+        </template>
+    </table>
+</div>
+</body>
+
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            title: "1.如果是男则展示男生table 2.如果是女则展示女生table",
+            sex: '男',
+            manData: [
+                {
+                    "name": "男1",
+                    "sex": "男",
+                    "age": "1",
+                },
+                {
+                    "name": "男2",
+                    "sex": "男",
+                    "age": "2",
+                },
+                {
+                    "name": "男3",
+                    "sex": "男",
+                    "age": "3",
+                }
+            ],
+            womanData: [
+                {
+                    "name": "女1",
+                    "sex": "女",
+                    "age": "1",
+                },
+                {
+                    "name": "女2",
+                    "sex": "女",
+                    "age": "2",
+                },
+                {
+                    "name": "女3",
+                    "sex": "女",
+                    "age": "3",
+                }
+            ]
+        }
+    })
+</script>
+</html>
