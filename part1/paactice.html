@@ -8,7 +8,13 @@
 <body>
 <div id="app">
     {{title}}<br/>
-    </sapan>
+    <select v-model="sex">
+        <option value="男">男</option>
+        <option value="女">女</option>
+    </select><br/>
+
+    您选择的的性别是：{{sex}}
+
     <table>
         <thead>
         <th>姓名</th>
