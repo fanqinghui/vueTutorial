@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-method</title>
+    <script src="https://unpkg.com/vue"></script>
+
+
+</head>
+<body>
+
+<div id="app">
+    <p>{{ message }}</p>
+    <button type="button" v-on:click="reverseMessage">逆转文字</button>
+</div>
+
+</body>
+
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        },
+        methods:{
+            reverseMessage:function(){
+                this.message=this.message.split('').reverse().join('')
+            }
+        }
+    })
+
+</script>
+</html>
