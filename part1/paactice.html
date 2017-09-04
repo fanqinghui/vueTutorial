@@ -8,7 +8,7 @@
 <body>
 <div id="app">
     {{title}}<br/>
-    <select v-model="sex">
+    <select v-model="sex" v-bind:title="sex">
         <option value="男">男</option>
         <option value="女">女</option>
     </select><br/>
