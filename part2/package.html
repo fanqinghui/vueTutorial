@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue组件</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<script>
+    new Vue({
+        el:"app",
+        data:""
+
+    });
+    // 定义名为 todo-item 的新组件
+    Vue.component('todo-item', {
+        template: '<li>这是个待办项</li>'
+    })
+</script>
+</html>
