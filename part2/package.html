@@ -3,20 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>vue组件学习</title>
-    <script src="https://unpkg.com/vue"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        //定义名为 todo-item 的新组件
+        Vue.component('todo-item', {
+            props:['todo'],
+            template: '<li>{{todo.name}}</li>'
+        })
+    </script>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+    <ol>
+        <todo-item
+            v-for="todo in todos"
+            v-bind:todo="todo"
+        ></todo-item>
+    </ol>
+</div>
+
 </body>
 <script>
     new Vue({
-        el:"app",
-        data:""
-
+        el:"#app",
+        data:{
+           todos:[
+               {
+                   title:'1',
+                   name:'起床',
+               },
+               {
+                   title:'2',
+                   name:'吃饭',
+               },
+               {
+                   title:'3',
+                   name:'工作',
+               },
+               {
+                   title:'4',
+                   name:'睡觉',
+               },
+           ]
+        },
     });
-    // 定义名为 todo-item 的新组件
-    Vue.component('todo-item', {
-        template: '<li>这是个待办项</li>'
-    })
 </script>
 </html>
